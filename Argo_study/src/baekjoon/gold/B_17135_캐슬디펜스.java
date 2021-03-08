@@ -13,6 +13,7 @@ public class B_17135_캐슬디펜스 {
 	static int sel [];
 	static int com[];
 	
+	
 	static class Point{
 		int x,y;
 		public Point(int x, int y) {
