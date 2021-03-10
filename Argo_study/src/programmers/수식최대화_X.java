@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.Scanner;
 
-public class 수식최대화 {
+public class 수식최대화_X {
 
 	static String a;
 	public static void main(String[] args) {

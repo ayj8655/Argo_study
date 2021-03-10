@@ -2,7 +2,7 @@ package baekjoon.gold;
 
 import java.util.Scanner;
 
-public class B_17136_색종이붙이기 {
+public class B_17136_색종이붙이기_X {
 
 	static int [][] arr;
 	
