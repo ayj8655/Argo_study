@@ -1,13 +1,11 @@
 package baekjoon.gold;
 
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
+
 /*
  * DFS와 BFS 혼합해서 사용
  * 완전탐색으로 출이
- * 
- * 
- * 
  * 
  */
 public class B_14502_연구소 {
@@ -28,17 +26,21 @@ public class B_14502_연구소 {
 	static int[] dx = { 1, -1, 0, 0 }; 
 	static int[] dy = { 0, 0, -1, 1 };
 	
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws Exception{
 		
-		N = sc.nextInt();
-		M = sc.nextInt();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine()," ");
+		
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
 		
 		arr = new int[N][M];
 		
 		for (int i = 0; i < N; i++) {	//0 = 빈칸, 1 = 벽, 2는 바이러스
+			st = new StringTokenizer(br.readLine()," ");
+					
 			for (int j = 0; j < M; j++) {
-				arr[i][j] = sc.nextInt();
+				arr[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
 		
