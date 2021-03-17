@@ -3,7 +3,7 @@ package baekjoon.gold;
 import java.util.*;
 import java.io.*;
 
-public class B_16235_나무재테크 {
+public class B_16235_나무재테크_X {
 
 	
 	static int arr[][];

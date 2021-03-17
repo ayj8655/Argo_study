@@ -1,4 +1,4 @@
-package baekjoon.gold;
+package profe;
 
 import java.io.FileInputStream;
 import java.util.Scanner;
