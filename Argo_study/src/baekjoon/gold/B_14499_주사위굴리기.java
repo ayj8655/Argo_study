@@ -1,9 +1,9 @@
-package baekjoon;
+package baekjoon.gold;
 
 import java.util.*;
 import java.io.*;
 
-public class Aasic {
+public class B_14499_주사위굴리기 {
 	
 	static int N,T,Ans;
 	

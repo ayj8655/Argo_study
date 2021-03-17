@@ -1,4 +1,4 @@
-package profe;
+package professor;
 
 import java.util.*;
 import java.io.*;

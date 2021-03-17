@@ -1,4 +1,4 @@
-package profe;
+package professor;
 
 import java.awt.List;
 import java.io.FileInputStream;
