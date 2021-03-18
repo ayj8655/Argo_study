@@ -3,9 +3,9 @@ package baekjoon.gold;
 import java.util.*;
 import java.io.*;
 
-//1167번 문제랑 똑같 (입력방식만다름)
+//1967번 문제랑 똑같 (입력방식만다름)
 //20210318 1회 풀이
-public class B_1967_트리의지름 {
+public class B_1167_트리의지름 {
 	
 	static class Node{
 		int vertexl;	//인접정접의 주소랑
@@ -27,19 +27,20 @@ public class B_1967_트리의지름 {
 	static boolean [] v;
 	
 	public static void main(String[] args) throws Exception{
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = null;
-		
-		int N = Integer.parseInt(br.readLine());
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
 		adjlist = new Node[N+1];
-		
-		for (int i = 1; i < N; i++) {
-			st = new StringTokenizer(br.readLine()," ");
-			int from = Integer.parseInt(st.nextToken());
-			int to = Integer.parseInt(st.nextToken());
-			int we = Integer.parseInt(st.nextToken());
-			adjlist[from] = new Node(to,we, adjlist[from]);
-			adjlist[to] = new Node(from,we, adjlist[to]);
+
+		for (int i = 0; i < N; i++) {
+			int from = sc.nextInt();
+			while (true) {
+				int to = sc.nextInt();
+				if(to==-1) break;
+				int we = sc.nextInt();
+				adjlist[from] = new Node(to,we, adjlist[from]);
+				adjlist[to] = new Node(from,we, adjlist[to]);
+			}
+				
 		}
 		
 		v = new boolean[N+1];
