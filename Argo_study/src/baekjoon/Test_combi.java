@@ -1,3 +1,4 @@
+package baekjoon;
 import java.util.Arrays;
 
 /*
@@ -5,7 +6,7 @@ import java.util.Arrays;
  * 
  * 
  * */
-public class Test {
+public class Test_combi {
 
 	static int N =3;
 	
