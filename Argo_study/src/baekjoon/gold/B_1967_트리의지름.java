@@ -7,7 +7,7 @@ import java.io.*;
 //20210318 1회 풀이
 public class B_1967_트리의지름 {
 	
-	static class Node{
+	static class Node{	//노드 클래스
 		int vertexl;	//인접정접의 주소랑
 		int we;			//가중치
 		Node next;		//다음 노드
@@ -33,7 +33,7 @@ public class B_1967_트리의지름 {
 		int N = Integer.parseInt(br.readLine());
 		adjlist = new Node[N+1];
 		
-		for (int i = 1; i < N; i++) {
+		for (int i = 1; i < N; i++) {	//인접리스트 입력 및 생성
 			st = new StringTokenizer(br.readLine()," ");
 			int from = Integer.parseInt(st.nextToken());
 			int to = Integer.parseInt(st.nextToken());
@@ -43,7 +43,7 @@ public class B_1967_트리의지름 {
 		}
 		
 		v = new boolean[N+1];
-		dfs(1,0);
+		dfs(1,0);	
 		v = new boolean[N+1];
 		dfs(second,0);
 		
