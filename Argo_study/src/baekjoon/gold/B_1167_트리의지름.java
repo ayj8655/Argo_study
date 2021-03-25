@@ -40,7 +40,6 @@ public class B_1167_트리의지름 {
 				adjlist[from] = new Node(to,we, adjlist[from]);
 				adjlist[to] = new Node(from,we, adjlist[to]);
 			}
-				
 		}
 		
 		v = new boolean[N+1];

@@ -21,12 +21,12 @@ public class B_1967_트리의지름 {
 		}
 	}
 	
-
 	static int Ans=Integer.MIN_VALUE,second;
 	static Node[] adjlist;
 	static boolean [] v;
 	
 	public static void main(String[] args) throws Exception{
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = null;
 		
