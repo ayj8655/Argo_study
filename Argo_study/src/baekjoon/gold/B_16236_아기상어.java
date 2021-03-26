@@ -15,10 +15,6 @@ public class B_16236_아기상어 {
 	
 	static int dx[] = {-1, 1, 0, 0};
 	static int dy[] = {0, 0, -1, 1};
-	/*
-	static int dx[] = {-1,1,0,0};
-	static int dy[] = {0,0,1,-1};
-	*/
 	
 	static LinkedList<Point> fish;
 	static int arr[][];

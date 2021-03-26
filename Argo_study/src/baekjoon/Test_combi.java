@@ -101,8 +101,8 @@ public class Test_combi {
 		for (int j = 0; j < N; j++) {
 			sel[k]=arr[j];
 			permutation(arr, sel, k+1);
-			}
 		}
+	}
 		
 }
 	
