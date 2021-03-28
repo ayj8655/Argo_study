@@ -81,7 +81,7 @@ public class 섬의개수_DFS_BFS_연습 {
 						v[nx][ny]=true;
 					}
 				}
-			}	
+			}
 		}
 	}
 	

@@ -67,7 +67,6 @@ public class B_17143_낚시왕 {
 	static void eat() {
 		for (int i = 0; i < R+1; i++) {
 			for (int j = 0; j < C+1; j++) {
-				
 				int temp = arr[i][j].size();		//상어 몇마리인지
 				
 				if(temp>=2) {		//2마리 이상이면
@@ -77,6 +76,7 @@ public class B_17143_낚시왕 {
 					while (!arr[i][j].isEmpty()) {
 						
 						Point p2 = arr[i][j].poll();
+						
 						if(p.z < p2.z) p=p2;
 
 					}
