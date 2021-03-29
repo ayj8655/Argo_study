@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BFS_DFS_Example {
+public class BFS_DFS_Graph_Example {
 
 	public static void main(String[] args) {
 		//인접행렬
