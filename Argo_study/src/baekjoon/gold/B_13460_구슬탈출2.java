@@ -22,12 +22,10 @@ public class B_13460_구슬탈출2 {
 		}	
 	}
 	
-    public static int[] dx = new int[] { 0, 0, 1, -1 }; // 동서남북
-    public static int[] dy = new int[] { 1, -1, 0, 0 };
-    
+ 
 	
-//	static int dx[] = {1,-1,0,0};
-//	static int dy[] = {0,0,-1,1};
+	static int dx[] = {0, 0, 1, -1};
+	static int dy[] = {1, -1, 0, 0};
 	
 	static int N,M;
 	static char arr[][];
@@ -81,10 +79,10 @@ public class B_13460_구슬탈출2 {
 				return;
 			}
 			
-			System.out.println(P.dis+" 번 진행");
+//			System.out.println(P.dis+" 번 진행");
 			
 			for (int d = 0; d < 4; d++) {
-				System.out.println(d +"방향 가는중");
+//				System.out.println(d +"방향 가는중");
 				int Rx = P.R[0];
 				int Ry = P.R[1];
 				int Bx = P.B[0];
