@@ -21,7 +21,7 @@ public class S_1238_Contact_pro {
 	}
 	static int tc=1;
 	public static void main(String[] args) throws FileNotFoundException {
-		System.setIn(new FileInputStream("contact.txt"));
+		System.setIn(new FileInputStream("res/input_d4_1238.txt"));
 		Scanner sc = new Scanner(System.in);
 		for (tc = 1; tc <= 10; tc++) {
 			N = sc.nextInt();
@@ -41,8 +41,10 @@ public class S_1238_Contact_pro {
 		Q.add(new Node(start, 1));
 		v[start] = 1;
 		int max = 0;
+		
 		while (!Q.isEmpty()) {
 			Node p = Q.poll();
+			
 			for (int i = 1; i < adj.length; i++) {
 				if (v[i] == 0 && adj[p.num][i] == 1) {
 					v[i] = p.depth + 1;

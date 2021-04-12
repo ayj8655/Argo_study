@@ -19,6 +19,7 @@ public class B_20165_인내의도미노장인호석 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine()," ");
 		StringBuilder sb = new StringBuilder();
+		
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 		R = Integer.parseInt(st.nextToken());
@@ -37,24 +38,32 @@ public class B_20165_인내의도미노장인호석 {
 			st = new StringTokenizer(br.readLine(), " ");
 			int x = Integer.parseInt(st.nextToken()) - 1;
 			int y = Integer.parseInt(st.nextToken()) - 1;
-			int d = checkDir(st.nextToken().charAt(0));
+			int d=0;
+			char temp = st.nextToken().charAt(0);
 			
-			attack(x, y, d);
+			if (temp == 'W')
+				d=1;
+			else if (temp == 'S')
+				d=2;
+			else if (temp == 'N')
+				d=3;
+			
+			att(x, y, d);
 			
 			st = new StringTokenizer(br.readLine(), " ");
 			x = Integer.parseInt(st.nextToken()) - 1;
 			y = Integer.parseInt(st.nextToken()) - 1;
 			
-			defense(x,y);
+			def(x,y);
 		}
 		
 		sb.append(Ans).append("\n");
 		for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
                 if (ch[i][j]) 
-                	sb.append("F ");// 도미노가 넘어진 것
+                	sb.append("F ");
                 else 
-                	sb.append("S ");// 도미노가 세워진 것
+                	sb.append("S ");
             }
             sb.append("\n");
         }
@@ -62,55 +71,47 @@ public class B_20165_인내의도미노장인호석 {
 		System.out.print(sb.toString());
 		
 	}
-	
-	static int checkDir(char cs) {
-		if (cs == 'E') {//오
-			return 0;
-		} else if (cs == 'W') {//왼
-			return 1;
-		} else if (cs == 'S') {//하
-			return 2;
-		} else if (cs == 'N') {//상
-			return 3;
-		}
-		return 0;
-	}
 
-	static void attack(int x, int y, int d) {
-		if (ch[x][y]) {
+	
+	static void att(int x, int y, int d) {
+		if (ch[x][y]) 
 			return;
-		} else {
-			int size = arr[x][y] - 1;
-			ch[x][y] = true;
-			Ans++;
-			while (size > 0) {
-				int nx = x + dx[d];
-				int ny = y + dy[d];
-				if (nx < 0 || ny < 0 || nx >= N || ny >= M) {
-					return;
-				}
-				if (ch[nx][ny]) {
-					size--;
-					x = nx;
-					y = ny;
-					continue;
-				}
+		
+		int size = arr[x][y] - 1;
+		ch[x][y] = true;
+		Ans++;
+		while (size > 0) {
+			
+			int nx = x + dx[d];
+			int ny = y + dy[d];
+			
+			if (nx < 0 || ny < 0 || nx >= N || ny >= M) 
+				return;
+			
+			if (ch[nx][ny]) {
 				size--;
-				ch[nx][ny] = true;
-				int newSize = arr[nx][ny] - 1;
 				x = nx;
 				y = ny;
-				Ans++;
-				size = newSize > size ? newSize : size;
+				continue;
 			}
+			
+			size--;
+			ch[nx][ny] = true;
+			Ans++;
+			
+			int nsize = arr[nx][ny] - 1;
+			x = nx;
+			y = ny;
+			
+			if(nsize > size) size = nsize;
+			
 		}
+		
 	}
-	static void defense(int x, int y) {
+	static void def(int x, int y) {
 		if(ch[x][y]) 
 			ch[x][y] = false;
 		else 
 			return;
-		
 	}
-
 }
