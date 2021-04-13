@@ -66,6 +66,7 @@ public class S_1249_보급로 {
 		
 		while(!q.isEmpty()) {
 			Point p = q.poll();
+			
 			int x = p.x;
 			int y = p.y;
 			
