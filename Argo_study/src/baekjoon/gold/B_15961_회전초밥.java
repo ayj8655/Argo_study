@@ -12,6 +12,7 @@ public class B_15961_회전초밥 {
 		System.setIn(new FileInputStream("res/input_B_15961.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		
 		N = Integer.parseInt(st.nextToken());// 접시
 		D = Integer.parseInt(st.nextToken());// 초밥의 가짓수
 		K = Integer.parseInt(st.nextToken());// 연속접시 수
@@ -25,7 +26,7 @@ public class B_15961_회전초밥 {
 			arr[i] = Integer.parseInt(br.readLine());
 
 		for (int i = 0; i < K; i++) {
-			if (v[arr[i]]++ == 0) { // 초밥 [테이블에 있는 종류] +1
+			if (v[arr[i]]++ == 0) {
 				eat++; // 먹음
 			}
 		}
@@ -36,7 +37,7 @@ public class B_15961_회전초밥 {
 		maxCnt = Math.max(eat, maxCnt); // 최대치 갱신
 
 		if (v[C] == 0)
-			eat--; // 가장 앞의 초밥을 안먹은 거로 치고 추가추가 하며 갈 것이므로 먹은거 -1
+			eat--; 
 
 		slide();
 
