@@ -29,8 +29,8 @@ public class B_1197_최소스패닝트리 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
  
-        V = Integer.parseInt(st.nextToken());    
-        E = Integer.parseInt(st.nextToken());    
+        V = Integer.parseInt(st.nextToken());   
+        E = Integer.parseInt(st.nextToken());
         
         parents = new int[V + 1];
         edgeList = new Edge[E];
