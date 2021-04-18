@@ -11,7 +11,7 @@ public class B_2580_스도쿠 {
 	
 	static LinkedList<int[]> list;
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		System.setIn(new FileInputStream("res/input_B_2580.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = null;
@@ -21,11 +21,10 @@ public class B_2580_스도쿠 {
 
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
-
 			for (int j = 0; j < N; j++) {
 				arr[i][j] = Integer.parseInt(st.nextToken());
 				if (arr[i][j] == 0)
-					list.add(new int[] { i, j });
+					list.add(new int[] {i, j});
 			}
 		}
 
@@ -37,9 +36,9 @@ public class B_2580_스도쿠 {
 
 	public static void backtracking(int idx) {
 
-		if (idx == list.size()) {	//처음에넣은 0의 개수와 동일하면 끝
+		if (idx == list.size()) {	//처음에넣은 빈칸의 개수와 동일하면 끝
 			print();
-			System.exit(0);
+			System.exit(0);	//하나만 출력하면 되서 그냥 종료
 		}
 
 		int y = list.get(idx)[0];
@@ -67,7 +66,7 @@ public class B_2580_스도쿠 {
 		int nx = x / 3 * 3;
 		int ny = y / 3 * 3;
 		
-		for (int i = ny; i < ny + 3; i++) {	//3*3 유효한지
+		for (int i = ny; i < ny + 3; i++) {	//3*3 유효한지 
 			for (int j = nx; j < nx + 3; j++) {
 				if (arr[i][j] == v)
 					return false;
