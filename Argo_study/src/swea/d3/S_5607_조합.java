@@ -1,30 +1,32 @@
-package swea.d5;
+package swea.d3;
 
 import java.util.*;
 import java.io.*;
 
 
-public class S_3238_이항계수구하기_pro {
+public class S_5607_조합 {
 
-	public static int iT=0,N,R,P;
-	public static int Q=11;
+	static int t,N,R;
+	static int Q=1234567891;
 
-	
-	static long n,r;
-	
 	public static void main(String[] args) throws Exception {
-		Scanner scann=new Scanner(System.in);
-		iT=scann.nextInt();
-		for (int T = 1; T <= iT; T++) {
-
-			n=scann.nextLong();
-			r=scann.nextLong();
-			P=scann.nextInt();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st= null;
+		StringBuilder sb = new StringBuilder();
+		
+		t=Integer.parseInt(br.readLine());
+		for (int T = 1; T <= t; T++) {
+			st = new StringTokenizer(br.readLine()," ");
 			
+			N=Integer.parseInt(st.nextToken());
+			R=Integer.parseInt(st.nextToken());
+			sb.append("# "+T).append(nCr(N,R,Q));
 			
-//			System.out.printf("#%d %d\n",T,nCr(n,r,P));
 		}
+		
+		System.out.println(sb.toString());
 	}
+	
 	static long power(long x, long y, long p)  { 
 		long res = 1L; 
         x = x % p; 
@@ -36,13 +38,8 @@ public class S_3238_이항계수구하기_pro {
             x = (x * x) % p; 
         }  
         return res; 
-    } 
-	
-    static long modInverse(long n, long p) { 
-        return power(n, p-2, p); 
     }
-    
-    
+	
     static long nCr(int n, int r, int p) { 
         if (r == 0) 
             return 1L; 
