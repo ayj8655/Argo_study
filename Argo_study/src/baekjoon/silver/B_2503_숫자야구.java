@@ -20,10 +20,6 @@ public class B_2503_숫자야구{
 			this.st = st;
 			this.ball = ball;
 		}
-		@Override
-		public String toString() {
-			return "base [ans=" + ans + ", st=" + st + ", ball=" + ball + "]";
-		}
 	}
 	
 	static int N, Ans=0;

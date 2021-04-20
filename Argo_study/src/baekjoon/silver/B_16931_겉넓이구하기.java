@@ -1,6 +1,7 @@
 package baekjoon.silver;
 
 import java.util.Scanner;
+
 /*
 
 
@@ -40,41 +41,39 @@ public class B_16931_겉넓이구하기 {
 		Scanner sc = new Scanner(System.in);
 
 		int dx[] = { 0, 0, 1, -1 };
-		int dy[] = { 1, -1, 0, 0 };	    
-		
-        int N = sc.nextInt();		//종이의 크기
-        int M = sc.nextInt();		//종이의 크기
-        int count =0;				//결과값 저장
-        int arr[][] = new int[N][M];
-        
-        for (int i = 0; i < N; i++) {
+		int dy[] = { 1, -1, 0, 0 };
+
+		int N = sc.nextInt(); // 종이의 크기
+		int M = sc.nextInt(); // 종이의 크기
+		int count = 0; // 결과값 저장
+		int arr[][] = new int[N][M];
+
+		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
 				arr[i][j] = sc.nextInt();
 			}
 		}
- 
-        for (int i = 0; i < N; i++) {
+
+		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
-				for (int k = 0; k < 4; k++) {	//탐색
-					int nx = i+dx[k];
-					int ny = j+dy[k];
-					
-					if(nx >= 0 && nx< N && ny>=0&& ny<M) {	//탐색 범위 안에 있을 경우
-						if(arr[nx][ny] < arr[i][j]) {		//
+				for (int k = 0; k < 4; k++) { // 탐색
+					int nx = i + dx[k];
+					int ny = j + dy[k];
+
+					if (nx >= 0 && nx < N && ny >= 0 && ny < M) { // 탐색 범위 안에 있을 경우
+						if (arr[nx][ny] < arr[i][j]) { //
 							count += (arr[i][j] - arr[nx][ny]);
 							System.out.println(count);
 						}
-					}
-					else count += arr[i][j];				//범위 밖
+					} else
+						count += arr[i][j]; // 범위 밖
 				}
 			}
 		}
-        
-        count += 2*N*M;			//윗면과 아랫면은 무조건 더하기
-        
-        
-        System.out.println(count);
-        
+
+		count += 2 * N * M; // 윗면과 아랫면은 무조건 더하기
+
+		System.out.println(count);
 
 	}
 

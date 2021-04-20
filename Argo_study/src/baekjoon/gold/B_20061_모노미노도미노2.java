@@ -31,10 +31,10 @@ public class B_20061_모노미노도미노2 {
 			// 이동
 			greenMove(green, t, r, c);
 			blueMove(blue, t, r, c);
-			// 빙고체크
+			// 빙고
 			greenCheck(green);
 			blueCheck(blue);
-			// 특별영역체크
+			// 특별영역
 			specialgreenCheck(green);
 			specialblueCheck(blue);
 		}
@@ -98,26 +98,26 @@ public class B_20061_모노미노도미노2 {
 	}
 
 	private static void blueCheck(boolean[][] blue) {
-		for (int col = 0; col < blue[0].length; col++) {
+		for (int i = 0; i < blue[0].length; i++) {
 			boolean check = true;
-			for (int row = 0; row < blue.length; row++) {
-				if (!blue[row][col]) {
+			for (int j = 0; j < blue.length; j++) {
+				if (!blue[j][i]) {
 					check = false;
 					break;
 				}
 			}
 			if (check) {
 				Ans++;
-				blueGravity(blue, col);
+				blueGravity(blue, i);
 			}
 		}
 	}
 
 	private static void blueGravity(boolean[][] blue, int idx) {
-		for (int col = idx - 1; col >= 0; col--) {
-			for (int row = 0; row < blue.length; row++) {
-				blue[row][col + 1] = blue[row][col];
-				blue[row][col] = false;
+		for (int i = idx - 1; i >= 0; i--) {
+			for (int j = 0; j < blue.length; j++) {
+				blue[j][i + 1] = blue[j][i];
+				blue[j][i] = false;
 			}
 		}
 	}
@@ -150,7 +150,7 @@ public class B_20061_모노미노도미노2 {
 	private static void blueMove(boolean[][] blue, int t, int r, int c) {
 		int ny = c;
 		if (t == 1) {
-			for (int i = c; i < blue[r].length; i++) {
+			for (int i = 0; i < blue[r].length; i++) {
 				if (blue[r][i]) {
 					break;
 				} else {
@@ -159,7 +159,7 @@ public class B_20061_모노미노도미노2 {
 			}
 			blue[r][ny] = true;
 		} else if (t == 2) {
-			for (int i = c; i < blue[r].length - 1; i++) {
+			for (int i = 0; i < blue[r].length - 1; i++) {
 				if (blue[r][i] || blue[r][i + 1]) {
 					break;
 				}
@@ -168,7 +168,7 @@ public class B_20061_모노미노도미노2 {
 			blue[r][ny] = true;
 			blue[r][ny + 1] = true;
 		} else if (t == 3) {
-			for (int i = c; i < blue[r].length; i++) {
+			for (int i = 0; i < blue[r].length; i++) {
 				if (blue[r][i] || blue[r + 1][i]) {
 					break;
 				}
@@ -182,7 +182,7 @@ public class B_20061_모노미노도미노2 {
 	private static void greenMove(boolean[][] green, int t, int r, int c) {
 		int nx = r;
 		if (t == 1) {
-			for (int i = r; i < green.length; i++) {
+			for (int i = 0; i < green.length; i++) {
 				if (green[i][c]) {
 					break;
 				} else {
@@ -191,7 +191,7 @@ public class B_20061_모노미노도미노2 {
 			}
 			green[nx][c] = true;
 		} else if (t == 2) {
-			for (int i = r; i < green.length; i++) {
+			for (int i = 0; i < green.length; i++) {
 				if (green[i][c] || green[i][c + 1]) {
 					break;
 				}
@@ -200,7 +200,7 @@ public class B_20061_모노미노도미노2 {
 			green[nx][c] = true;
 			green[nx][c + 1] = true;
 		} else if (t == 3) {
-			for (int i = r; i < green.length - 1; i++) {
+			for (int i = 0; i < green.length - 1; i++) {
 				if (green[i][c] || green[i + 1][c]) {
 					break;
 				}

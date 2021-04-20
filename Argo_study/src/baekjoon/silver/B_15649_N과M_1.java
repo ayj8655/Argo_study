@@ -22,8 +22,7 @@ import java.util.Scanner;
 public class B_15649_N과M_1 {
 
 	private static void permutation(int[] arr, int[] sel, int k, boolean[] v) {
-		// TODO 자동 생성된 메소드 스텁
-
+		
 		if(k==sel.length) {
 			for (int i = 0; i < sel.length; i++) {
 				System.out.print(sel[i]+" ");
@@ -34,8 +33,8 @@ public class B_15649_N과M_1 {
 		
 		for (int i = 0; i < arr.length; i++) {
 			
-			if(v[i]==false) {		
-				v[i] = true;		
+			if(v[i]==false) {
+				v[i] = true;
 				sel[k] = arr[i];
 				permutation(arr, sel, k+1,v);
 				v[i] = false;		

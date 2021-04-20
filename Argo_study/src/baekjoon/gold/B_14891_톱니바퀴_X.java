@@ -1,4 +1,4 @@
-package baekjoon.silver;
+package baekjoon.gold;
 
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 7
  */
-public class B_14891_톱니바퀴 {
+public class B_14891_톱니바퀴_X {
 
 	static int ans=0;
 	public static void main(String[] args) {

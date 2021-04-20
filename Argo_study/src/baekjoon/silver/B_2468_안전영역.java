@@ -17,7 +17,7 @@ public class B_2468_안전영역 {
 	static boolean v [][];
 	
 	public static void main(String[] args) throws Exception{
-//		System.setIn(new FileInputStream("res/input_B_2468.txt"));
+		System.setIn(new FileInputStream("res/input_B_2468.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
 		arr = new int [N][N];
@@ -30,6 +30,7 @@ public class B_2468_안전영역 {
 				Ma = Math.max(arr[i][j], Ma);
 			}
 		}
+		
 		
 		for (int k = Mi; k <= Ma; k++) {
 			v = new boolean [N][N];

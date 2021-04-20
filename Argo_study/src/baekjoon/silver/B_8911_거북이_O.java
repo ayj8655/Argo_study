@@ -18,17 +18,9 @@ public class B_8911_거북이_O {
 		int x,y;
 
 		public Point(int x, int y) {
-			super();
 			this.x = x;
 			this.y = y;
 		}
-
-		@Override
-		public String toString() {
-			return "Point [x=" + x + ", y=" + y + "]";
-		}
-		
-		
 	}
 	
 
@@ -56,9 +48,6 @@ public class B_8911_거북이_O {
 			po[CNT] = new Point(0,0);
 			CNT++;
 			for (int i = 0; i < strarr.length; i++) {
-				
-				
-				
 				
 				switch (strarr[i]) {
 					case 'F': {
