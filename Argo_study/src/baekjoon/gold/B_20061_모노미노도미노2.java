@@ -3,9 +3,10 @@ package baekjoon.gold;
 import java.util.*;
 import java.io.*;
 
+//순서대로 진행
 public class B_20061_모노미노도미노2 {
 
-	static boolean green[][], blue[][];
+	static boolean green[][], blue[][];	
 	static int Ans;
 
 	public static void main(String[] args) throws Exception {
@@ -18,8 +19,8 @@ public class B_20061_모노미노도미노2 {
 		int N = Integer.parseInt(br.readLine());
 		int t, r, c;
 
-		green = new boolean[10][4];
-		blue = new boolean[4][10];
+		green = new boolean[10][4];	//녹색
+		blue = new boolean[4][10];	//파란색
 
 		for (int i = 0; i < N; i++) {
 
@@ -55,24 +56,24 @@ public class B_20061_모노미노도미노2 {
 
 	}
 
-	private static void specialgreenCheck(boolean[][] green) {
+	private static void specialgreenCheck(boolean[][] green) {	//특별영역
 
 		int remove = 0;
 
 		for (int i = 4; i < 6; i++) {
 			boolean check = false;
 			for (int j = 0; j < green[i].length; j++) {
-				if (green[i][j]) {
+				if (green[i][j]) {	//하나라도 영역에 있으면
 					check = true;
 					break;
 				}
 			}
 			if (check)
-				remove++;
+				remove++;	//발견한 라인수 만큼
 		}
 
 		for (int i = 0; i < remove; i++)
-			greenGravity(green, green.length - 1);
+			greenGravity(green, green.length - 1);	//지워버리기
 
 	}
 
@@ -122,23 +123,23 @@ public class B_20061_모노미노도미노2 {
 		}
 	}
 
-	private static void greenCheck(boolean[][] green) {
+	private static void greenCheck(boolean[][] green) {	//한줄 여부 확인
 		for (int i = 0; i < green.length; i++) {
 			boolean check = true;
 			for (int j = 0; j < green[i].length; j++) {
-				if (!green[i][j]) {
+				if (!green[i][j]) {	//하나라도 참이 있으면 컷
 					check = false;
 					break;
 				}
 			}
-			if (check) {
+			if (check) {	//모두 참이라서 포인트 얻고
 				Ans++;
-				greenGravity(green, i);
+				greenGravity(green, i);	//중력 적용 
 			}
 		}
 	}
 
-	private static void greenGravity(boolean[][] green, int idx) {
+	private static void greenGravity(boolean[][] green, int idx) {	//한줄 지우기 + 내리기
 		for (int i = idx - 1; i >= 0; i--) {
 			for (int j = 0; j < green[i].length; j++) {
 				green[i + 1][j] = green[i][j];
@@ -147,7 +148,7 @@ public class B_20061_모노미노도미노2 {
 		}
 	}
 
-	private static void blueMove(boolean[][] blue, int t, int r, int c) {
+	private static void blueMove(boolean[][] blue, int t, int r, int c) {	//최초 중력
 		int ny = c;
 		if (t == 1) {
 			for (int i = 0; i < blue[r].length; i++) {
@@ -179,7 +180,7 @@ public class B_20061_모노미노도미노2 {
 		}
 	}
 
-	private static void greenMove(boolean[][] green, int t, int r, int c) {
+	private static void greenMove(boolean[][] green, int t, int r, int c) {	//최초 중력
 		int nx = r;
 		if (t == 1) {
 			for (int i = 0; i < green.length; i++) {
