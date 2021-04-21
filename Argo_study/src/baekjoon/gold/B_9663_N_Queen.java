@@ -3,7 +3,7 @@ package baekjoon.gold;
 import java.util.*;
 import java.io.*;
 
-public class B1_NQueenTest {
+public class B_9663_N_Queen {
 	static int ans, N;
 	static int[] col;
 

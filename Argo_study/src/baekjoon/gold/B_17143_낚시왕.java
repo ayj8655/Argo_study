@@ -21,7 +21,7 @@ public class B_17143_낚시왕 {
 	
 	static int R, C, M,Ans;
 	static int Man;
-	
+
 	static LinkedList<Point> arr[][];
 	static LinkedList<Point> arrcopy[][];
 	

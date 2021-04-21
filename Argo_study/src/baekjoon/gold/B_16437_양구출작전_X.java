@@ -1,6 +1,6 @@
 package baekjoon.gold;
 
-public class B_16437_양구출작전 {
+public class B_16437_양구출작전_X {
 
 	
 	
