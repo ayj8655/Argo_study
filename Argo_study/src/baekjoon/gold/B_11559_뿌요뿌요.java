@@ -46,7 +46,8 @@ public class B_11559_뿌요뿌요 {
 		//R 빨강, G 초록, B 파랑, P 보라, Y 노랑
 		
 		 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		 for (int i = 0; i < 12; i++) arr[i] = br.readLine().toCharArray();
+		 for (int i = 0; i < 12; i++) 
+			 arr[i] = br.readLine().toCharArray();
 		 
 		 while (true) {
 			 boolean flag = false;
