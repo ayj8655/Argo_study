@@ -1,57 +1,47 @@
 package baekjoon.silver;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
-/*
- * 
- * 프린터 큐
-입력
-3
-1 0
-5
-4 2
-1 2 3 4
-6 0
-1 1 9 1 1 1
-
-출력
-1
-2
-5
- */
 public class B_1966_프린터큐 {
 	
 	static int T,N,M,cnt=0;
 	
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		T = sc.nextInt();
+	public static void main(String[] args) throws Exception{
+		
+		System.setIn(new FileInputStream("res/input_B_1966.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		StringTokenizer st = null;
+		T = Integer.parseInt(br.readLine());
+		
 		for (int t = 1; t <= T; t++) {
+			
+			st = new StringTokenizer(br.readLine(), " ");
+			
 			cnt=0;
-			N = sc.nextInt();//문서의 개수
-			M = sc.nextInt();//몇번째로 인쇄되었는지 궁금한 문서.
+			
+			N = Integer.parseInt(st.nextToken());//문서의 개수
+			M = Integer.parseInt(st.nextToken());//몇번째로 인쇄되었는지 궁금한 문서
 			
 			LinkedList<Integer> q = new LinkedList<>();
 			Queue<Integer> q2 = new LinkedList<>();
 			
+			st = new StringTokenizer(br.readLine(), " ");
+			
+			for (int i = 0; i < N; i++) 
+				q.add(Integer.parseInt(st.nextToken()));
+			
 			for (int i = 0; i < N; i++) {
-				q.add(sc.nextInt());
+				if(i==M) 
+					q2.add(M);
+				else 
+					q2.add(5000);
 			}
-			for (int i = 0; i < N; i++) {
-				if(i==M) q2.add(M);
-				else q2.add(5000);
-			}
-			
-			
-//			for (int i = 0; i < N; i++) {
-//				System.out.println(q.poll()+" " + q2.poll()+ " ");
-//			}
-			
+						
 			while(!q.isEmpty()){
-				boolean rating = true;
 				
+				boolean rating = true;
 				for (int i = 0; i < q.size(); i++) {	//전체를 돌면서 앞에꺼보다 큰게있는지 확인
 					if(q.peek() < q.get(i)) {
 						rating = false;
@@ -66,11 +56,10 @@ public class B_1966_프린터큐 {
 				else {
 					q.poll();
 					cnt++;
-					if(q2.peek() == M) {
-						System.out.println(cnt);
+					if(q2.peek() == M) 
+						sb.append(cnt+"\n");
 						
-					}
-
+			
 					q2.poll();
 					
 				}
@@ -78,6 +67,9 @@ public class B_1966_프린터큐 {
 			}
 			
 		}
+		
+		
+		System.out.print(sb);
 		
 	}
 
