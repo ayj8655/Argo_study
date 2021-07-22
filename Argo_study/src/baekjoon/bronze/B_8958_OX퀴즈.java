@@ -34,12 +34,11 @@ public class B_8958_OX퀴즈 {
 				
 			}
 			
-			System.out.println(score);
-
 			
+			System.out.println(score);
 		}
 		
-		
+
 	}
 
 }
