@@ -1,7 +1,9 @@
 package baekjoon.silver;
 
 
-import java.util.Arrays;
+import java.io.*;
+
+import java.util.*;
 
 /*
  * 15649    N과 M (1) - 중복되지 않은 순열
@@ -17,17 +19,17 @@ import java.util.Arrays;
  * */
 
 
-import java.util.Scanner;
-
 public class B_15649_N과M_1 {
+
 
 	private static void permutation(int[] arr, int[] sel, int k, boolean[] v) {
 		
 		if(k==sel.length) {
 			for (int i = 0; i < sel.length; i++) {
-				System.out.print(sel[i]+" ");
+				sb.append(sel[i]+" ");
+				
 			}
-			System.out.println();
+			sb.append("\n");
 			return;
 		}
 		
@@ -44,8 +46,11 @@ public class B_15649_N과M_1 {
 	}
 	
 	
-	public static void main(String[] args) {
+	static StringBuilder sb = new StringBuilder();
+	
+	public static void main(String[] args) throws Exception{
 		Scanner sc = new Scanner(System.in);
+
 		int N = sc.nextInt();
 		int M = sc.nextInt();
 
@@ -54,6 +59,7 @@ public class B_15649_N과M_1 {
 			arr[i] = i+1;
 		}
 		permutation(arr,new int[M],0,new boolean[arr.length]);
+		System.out.print(sb);
 		
 	}
 

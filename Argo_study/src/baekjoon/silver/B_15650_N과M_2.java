@@ -1,7 +1,7 @@
 package baekjoon.silver;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 /*
 
@@ -24,9 +24,9 @@ public class B_15650_N과M_2 {
 	private static void combination(int[] arr, int[] sel, int idx, int k) {
 		if(k == sel.length) {
 			for (int i = 0; i < sel.length; i++) {
-				System.out.print(sel[i]+" ");
+				sb.append(sel[i]+" ");
 			}
-			System.out.println();
+			sb.append("\n");
 			return;
 		}
 		
@@ -39,7 +39,7 @@ public class B_15650_N과M_2 {
 		
 	}
 	
-	
+	static StringBuilder sb = new StringBuilder();
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
@@ -50,6 +50,7 @@ public class B_15650_N과M_2 {
 			arr[i] = i+1;
 		}
 		combination(arr,new int[M],0,0);
+		System.out.print(sb);
 
 	}
 
