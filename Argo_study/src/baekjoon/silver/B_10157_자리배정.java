@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //달팽이 배열 문제
 
-public class B_10157_자리배정_O_달팽이배열 {
+public class B_10157_자리배정 {
 	static int C,R,K,cnt=1;
 	static int dx[] = {-1,0,1,0}; // 상 , 우 , 하 , 좌
 	static int dy[] = {0,1,0,-1};
