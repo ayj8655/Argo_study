@@ -68,8 +68,6 @@ public class Purmu_combi_power {
 				v[i] = false;
 			}
 		}
-		
-		
 	}
 
 }
