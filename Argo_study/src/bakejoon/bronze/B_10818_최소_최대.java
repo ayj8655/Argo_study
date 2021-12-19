@@ -7,7 +7,7 @@ public class B_10818_최소_최대 {
 	
 	static int arr[];
 	public static void main(String[] args) throws Exception {
-		
+	
 		System.setIn(new FileInputStream("res/input_B_10818.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = null;
